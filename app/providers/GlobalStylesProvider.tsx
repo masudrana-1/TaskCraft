@@ -16,6 +16,7 @@ const GlobalStylesProvider = ({children}: Props) => {
 };
 
 
+// style components 
 const GlobalStyles = styled.div`
     padding: 2.5rem;
     display: flex;
