@@ -3,6 +3,7 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { useGlobalState } from '../../context/globalContextProvider'
+import Image from 'next/image';
 
 const Sidebar = () => {
 
@@ -14,7 +15,18 @@ const Sidebar = () => {
 
     return (
         <SidebarStyled theme={theme}>
-            <h1>Sidebar</h1>
+            <div className="profile">
+                <div className="profile-overlay">
+
+                </div>
+                <div className="image">
+                    <Image width={70} height={70} src="/masud.jpg" alt='profile'/>
+                </div>
+                <h1>
+                    <span>Masud</span>
+                    <span>Rana</span>
+                </h1>
+            </div>
         </SidebarStyled>
     );
 };
