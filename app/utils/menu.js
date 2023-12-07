@@ -1,30 +1,30 @@
 // import { list, check, todo, home } from ""
 
-import { FaHome, FaList, FaCheck } from "react-icons/fa";
+import { FaHome, FaList, FaCheck, FaAddressBook } from "react-icons/fa";
 
 const menu = [
     {
         id: 1,
         title: "All Tasks",
-        icon: FaHome,
+        icon: <FaHome/>,
         link: "/",
     },
     {
         id: 2,
         title: "Important",
-        icon: FaList,
+        icon: <FaList/>,
         link: "/important",
     },
     {
         id: 3,
         title: "completed",
-        icon: FaCheck,
+        icon: <FaCheck/>,
         link: "/completed",
     },
     {
         id: 4,
         title: "Do It Now",
-        icon: FaCheck,
+        icon: <FaAddressBook/>,
         link: "/incomplete",
     },
 ];
