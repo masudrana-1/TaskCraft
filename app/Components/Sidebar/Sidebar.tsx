@@ -29,7 +29,7 @@ const Sidebar = () => {
 
                 </div>
                 <div className="image">
-                    <Image width={70} height={70} className='rounded-full' src="/masud.jpg" alt='profile'/>
+                    <Image width={70} height={70} src="/masud.jpg" alt='profile'/>
                 </div>
                 <h1>
                     <span>Masud</span>
@@ -102,7 +102,45 @@ const SidebarStyled = styled.nav`
             flex-direction: column;
 
             line-height: 1.4rem;
-            margin-left: 10px;
+            /* margin-left: 10px; */
+        }
+
+        .image, h1{
+            position: relative;
+            z-index: 1;
+        }
+
+        .image{
+            flex-shrink: 0;
+            display: inline-block;
+            overflow: hidden;
+            transition: all 0.55s ease;
+            border-radius: 100%;
+
+            width: 70px;
+            height: 70px;
+
+            img{
+                border-radius: 100%;
+                transition: all 0.5s ease;
+            }
+        }
+
+        h1{
+            margin-left: 0.8rem;
+            font-size: calc(1.2rem, 4vw, 1.4rem);
+            line-height: 100%;
+        }
+
+        &:hover{
+            .profile-overlay{
+                opacity: 1;
+                background: 2px solid ${(props) => props.theme.borderColor2};
+            }
+
+            img{
+                transform: scale(1.1);
+            }
         }
     }
 `;
