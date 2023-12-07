@@ -35,7 +35,8 @@ const Sidebar = () => {
                     <span>Masud</span>
                     <span>Rana</span>
                 </h1>
-                <ul className="nav-items">
+            </div>
+            <ul className="nav-items">
                     {menu.map((item, i) => {
 
                         const link = item.link;
@@ -49,8 +50,8 @@ const Sidebar = () => {
                             </div>
                         )
                     })}
-                </ul>
-            </div>
+            </ul>
+            <button>Sign Out</button>
         </SidebarStyled>
     );
 };
@@ -63,6 +64,47 @@ const SidebarStyled = styled.nav`
     background-color: ${(props) => props.theme.colorBg2};
     border: 2px solid ${(props) => props.theme.borderColor2};
     border-radius: 1rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .profile{
+        margin: 1.5rem;
+        padding: 1rem 0.8rem;
+        position: relative;
+        border-radius: 1rem;
+        cursor: pointer;
+        font-weight: 500;
+        color: ${(props) => props.theme.colorGrey0};
+
+        display: flex;
+        align-items: center;
+
+        .profile-overlay{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            z-index: 0;
+            background: ${(props) => props.theme.colorBg3};
+            transition: all 0.55s linear;
+            border-radius: 1rem;
+
+            opacity: 0.2;
+        }
+
+        h1{
+            font-size: 1.2rem;
+            display: flex;
+            flex-direction: column;
+
+            line-height: 1.4rem;
+            margin-left: 10px;
+        }
+    }
 `;
 
 export default Sidebar;
