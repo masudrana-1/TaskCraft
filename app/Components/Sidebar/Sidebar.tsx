@@ -43,7 +43,7 @@ const Sidebar = () => {
 
                         return (
                             <div key={i}>
-                                <li className={`nav-item flex ${pathName === link ? "active" : ""}`} onClick={() => { handleClick(link) }}>
+                                <li className={`nav-item ${pathName === link ? "active" : ""}`} onClick={() => { handleClick(link) }}>
                                     {item.icon}
                                     <Link href={link}>{ item.title}</Link>
                                 </li>
@@ -141,6 +141,41 @@ const SidebarStyled = styled.nav`
             img{
                 transform: scale(1.1);
             }
+        }
+    }
+
+    .nav-item{
+        position: relative;
+        padding: 0.6rem 1rem 1rem 2.1rem;
+        margin: 0.3rem 0;
+
+        display: grid;
+        grid-template-columns: 40px 1fr;
+        cursor: pointer;
+
+        &::after{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: ${(props) => props.theme.activeNavLinkHover};
+            z-index: 1;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        &::before{
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 0;
+            width: 0;
+            height: 100%;
+            background-color: ${(props) => props.theme.activeNavLinkHover};
+
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
         }
     }
 `;
