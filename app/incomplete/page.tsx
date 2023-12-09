@@ -2,12 +2,12 @@
 
 import React from 'react';
 
-const Important = () => {
+const Incomplete = () => {
     return (
         <div>
-            <h1>Important</h1>
+            <h1>Incomplete</h1>
         </div>
     );
 };
 
-export default Important;
+export default Incomplete;
