@@ -160,6 +160,7 @@ const SidebarStyled = styled.nav`
             top: 0;
             width: 0;
             height: 100%;
+            /* background-color: black; */
             background-color: ${(props) => props.theme.activeNavLinkHover};
             z-index: 1;
             transition: all 0.3s ease-in-out;
@@ -172,10 +173,29 @@ const SidebarStyled = styled.nav`
             top: 0;
             width: 0;
             height: 100%;
-            background-color: ${(props) => props.theme.activeNavLinkHover};
+            /* background-color: gray; */
+            background-color: ${(props) => props.theme.colorGreenDark};
 
             border-bottom-left-radius: 5px;
             border-top-left-radius: 5px;
+        }
+
+        a{
+            font-weight: 500;
+            z-index: 2;
+            transition: all 0.3s ease-in-out;
+        }
+
+        i{
+            display: flex;
+            align-items: center;
+            color: ${(props) => props.theme.colorIcons};
+        }
+
+        &:hover{
+            &::after{
+                width: 100%;
+            }
         }
     }
 `;
