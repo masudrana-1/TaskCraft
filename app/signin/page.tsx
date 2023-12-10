@@ -1,13 +1,14 @@
 "use client"
 
 import React from 'react';
+import { SignIn } from "@clerk/nextjs";
 
 const page = () => {
     return (
         <div>
-            <h1>Important</h1>
+            <SignIn/>
         </div>
     );
 };
 
-export default page;
+export default SignIn;

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Completed = () => {
+const page = () => {
     return (
         <div>
             <h1>Completed</h1>
@@ -10,4 +10,4 @@ const Completed = () => {
     );
 };
 
-export default Completed;
+export default page;

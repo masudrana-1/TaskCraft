@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-const Incomplete = () => {
+const page = () => {
     return (
         <div>
             <h1>Incomplete</h1>
@@ -10,4 +10,4 @@ const Incomplete = () => {
     );
 };
 
-export default Incomplete;
+export default page;
