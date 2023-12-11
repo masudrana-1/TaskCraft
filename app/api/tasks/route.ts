@@ -1,3 +1,4 @@
+import prisma from "@/app/utils/connect";
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
@@ -12,7 +13,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Unauthorized", status: 401 })
         }
 
-        const { title, description, date, isCompleted, isImportant } = await req.json();
+        const { title, description, date, completed, important } = await req.json();
         if (!title || !description || !date) {
             return NextResponse.json({
                 error: "Missing required fields",
@@ -27,7 +28,18 @@ export async function POST(req: Request) {
             });
         }
 
-        
+        // create task 
+        const task = await prisma.task.create({
+            data: {
+                title,
+                description,
+                date,
+                isCompleted: completed,
+                isImportant: important,
+                userId,
+            }
+        });
+        return NextResponse.json(task)
 
         
     } catch (error) {
