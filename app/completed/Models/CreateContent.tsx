@@ -33,10 +33,22 @@ const CreateContent = () => {
         }
     }
 
-    // console.log(title, description)
+
+    const handleSubmit = (e: any) => {
+        e.preventDefault();
+
+        const task = {
+            title,
+            description,
+            date,
+            completed,
+            important
+        };
+        
+    }
 
     return (
-        <div>
+        <form onSubmit={handleSubmit}>
             <h1>Create a Task</h1>
             <div className='input-control'>
                 <label htmlFor="title">Title</label>
@@ -53,7 +65,7 @@ const CreateContent = () => {
                 <label htmlFor="description">Description</label>
                 <textarea
                     rows={4}
-                    type="text"
+                    type='text'
                     name="description"
                     id="description"
                     value={description}
@@ -98,7 +110,7 @@ const CreateContent = () => {
                     <span>Submit</span>
                 </button>
             </div>
-        </div>
+        </form>
     );
 };
 
