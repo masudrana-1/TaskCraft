@@ -21,25 +21,31 @@ export async function POST(req: Request) {
             });
         }
 
-        if (title.length > 3) {
-            return NextResponse.json({
-                error: "Title must be at least 3 characters long",
-                status: 400,
-            });
-        }
+        // if (title.length > 3) {
+        //     return NextResponse.json({
+        //         error: "Title must be at least 3 characters long",
+        //         status: 400,
+        //     });
+        // }
+
+        const localDate = new Date();
+        const localDateString = localDate.toLocaleString('en-US', { timeZone: 'Asia/Dhaka' });
+        const isoDateString = localDate.toISOString();
 
         // create task 
         const task = await prisma.task.create({
             data: {
                 title,
                 description,
-                date,
-                isCompleted: completed,
-                isImportant: important,
+                date: isoDateString,
+                isCompleted: Boolean(completed),
+                isImportant: Boolean(important),
                 userId,
             }
         });
         return NextResponse.json(task)
+
+        console.log("Task created", task);
 
         
     } catch (error) {
