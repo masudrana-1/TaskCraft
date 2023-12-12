@@ -21,15 +21,14 @@ export async function POST(req: Request) {
             });
         }
 
-        // if (title.length > 3) {
-        //     return NextResponse.json({
-        //         error: "Title must be at least 3 characters long",
-        //         status: 400,
-        //     });
-        // }
+        if (title.length < 3) {
+            return NextResponse.json({
+                error: "Title must be at least 3 characters long",
+                status: 400,
+            });
+        }
 
         const localDate = new Date();
-        const localDateString = localDate.toLocaleString('en-US', { timeZone: 'Asia/Dhaka' });
         const isoDateString = localDate.toISOString();
 
         // create task 
@@ -43,9 +42,10 @@ export async function POST(req: Request) {
                 userId,
             }
         });
+        // console.log("Task created", task);
+        
         return NextResponse.json(task)
 
-        console.log("Task created", task);
 
         
     } catch (error) {
@@ -54,10 +54,26 @@ export async function POST(req: Request) {
     }
 }
 
+
 // Get 
 export async function GET(req: Request) {
     try {
+        const { userId } = auth();
+
+        if (!userId) {
+            return NextResponse.json({ error: "Unauthorized", status: 401 })
+        }
+
+        const tasks = await prisma.task.findMany({
+            where: {
+                userId,
+            }
+        })
+
+        console.log("TASKS", tasks);
         
+        return NextResponse.json(tasks)
+
     } catch (error) {
         console.log("ERROR GETTING TASKS:", error);
         return NextResponse.json({ error: "Error getting task", status: 400 });

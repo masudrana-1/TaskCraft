@@ -14,8 +14,8 @@ datasource db {
 model Task{
   id            String  @id @default(cuid()) @map("_id")
   title         String
-  description   String?
-  date          DateTime?
+  description   String
+  date          DateTime
   isCompleted   Boolean  @default(false)
   isImportant   Boolean  @default(false)
 
