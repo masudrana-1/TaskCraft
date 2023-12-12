@@ -1,5 +1,6 @@
 "use client"
 
+import axios from 'axios';
 import React, { useState } from 'react';
 
 const CreateContent = () => {
@@ -34,7 +35,7 @@ const CreateContent = () => {
     }
 
 
-    const handleSubmit = (e: any) => {
+    const handleSubmit = async(e: any) => {
         e.preventDefault();
 
         const task = {
@@ -44,7 +45,11 @@ const CreateContent = () => {
             completed,
             important
         };
-        
+        try {
+            const res = await axios.post("/api/tasks", task)
+        } catch (error) {
+            
+        }
     }
 
     return (
