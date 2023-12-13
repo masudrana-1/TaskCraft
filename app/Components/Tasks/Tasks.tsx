@@ -46,6 +46,7 @@ const Tasks = ({title, tasks}: Props) => {
 
 
 const TaskStyled = styled.main`
+    
     padding: 2rem;
     width: 100%;
     background-color: ${(props) => props.theme.colorBg2};
@@ -59,7 +60,11 @@ const TaskStyled = styled.main`
         width: 0.5rem;
     }
 
-    h1{
+    .tasks{
+        margin: 2rem 0;
+    }
+
+    >h1{
         font-size: calc(1.5rem, 2vw, 2rem);
         font-weight: 800;
         position: relative;
