@@ -1,6 +1,7 @@
 "use client"
 
 import React from 'react';
+import { FaEdit, FaHeart, FaRemoveFormat, FaTrash } from 'react-icons/fa';
 
 interface Props{
     title: string;
@@ -8,6 +9,7 @@ interface Props{
     date: string,
     isCompleted: boolean;
     id: string;
+    
 }
 
 const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
@@ -20,7 +22,15 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
             <p>{description}</p>
             <p className='date'>{date}</p>
             <div className="task-footer">
-                <button className='completed'>Completed</button>
+                {
+                    isCompleted ? (
+                        <button className='completed'>Completed</button>
+                    ) : (
+                            <button className='Incomplete'>Incomplete</button>
+                    )
+                }
+                <button className="edit"><FaEdit/></button>
+                <button className="delete"><FaTrash/></button>
             </div>
         </div>
     );
