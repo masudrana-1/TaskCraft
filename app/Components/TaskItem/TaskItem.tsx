@@ -2,7 +2,7 @@
 
 import { useGlobalState } from '@/app/context/globalContextProvider';
 import React from 'react';
-import { FaEdit, FaHeart, FaRemoveFormat, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaTrash } from 'react-icons/fa';
 import styled from 'styled-components';
 
 interface Props{

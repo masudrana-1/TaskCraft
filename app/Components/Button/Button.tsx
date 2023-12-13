@@ -1,6 +1,8 @@
 "use client"
 
+import { useGlobalState } from '@/app/context/globalContextProvider';
 import React from 'react';
+import styled from 'styled-components';
 
 interface Props{
     icon?: React.ReactNode;
@@ -16,12 +18,49 @@ interface Props{
 }
 
 
-const Button = ({icon, name, background, padding, border, borderRad, fw, fs, click, type}: Props) => {
+const Button = ({ icon, name, background, padding, border, borderRad, fw, fs, click, type }: Props) => {
+    
+    const { theme } = useGlobalState();
+
     return (
-        <div>
-            Button
-        </div>
+        <ButtonStyled
+            theme={theme}
+            style={{
+                background: background,
+                padding: padding || "0.5rem 1rem",
+                borderRadius: borderRad || "0.5rem",
+                fontWeight: fw || "500",
+                fontSize: fs,
+                border: border || "none",
+            }}
+            onClick={click}
+            type={type}
+        >
+            {icon && icon}
+            {name}
+        </ButtonStyled>
     );
 };
+
+const ButtonStyled = styled.button`
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: ${(props) => props.theme.colorGrey2};
+    z-index: 5;
+    cursor: pointer;
+    transition: all 0.55s ease-in-out;
+
+    i{
+        margin-top: 1rem;
+        color: ${(props) => props.theme.colorGrey2};
+        font-size: 1.5rem;
+    }
+
+    &:hover{
+        color: ${(props) => props.theme.colorGrey0};
+    }
+`
 
 export default Button;
