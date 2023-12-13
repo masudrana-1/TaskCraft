@@ -22,7 +22,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
 
     return (
         <TaskItemsStyled theme={theme}>
-            <p>{title}</p>
+            <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
             <div className="task-footer">
@@ -30,7 +30,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                     isCompleted ? (
                         <button className='completed'>Completed</button>
                     ) : (
-                            <button className='Incomplete'>Incomplete</button>
+                            <button className='incomplete'>Incomplete</button>
                     )
                 }
                 <button className="edit"><FaEdit/></button>
@@ -53,6 +53,44 @@ const TaskItemsStyled = styled.div`
 
     .date{
         margin-top: auto;
+    }
+
+    > h1{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+
+    .task-footer{
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+
+        button{
+            border: none;
+            outline: none;
+            cursor: pointer;
+
+            i{
+                font-size: 1.4rem;
+                color: ${(props) => props.theme.colorGrey2};
+            }
+        }
+
+        .edit{
+            margin-left: auto;
+        }
+
+        .completed, .incomplete{
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: ${(props) => props.theme.colorDanger};
+            border-radius: 30px
+        }
+
+        .completed
+        {
+            background: ${(props) => props.theme.colorGreenDark};
+        }
     }
 `
 
