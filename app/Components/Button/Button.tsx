@@ -56,10 +56,15 @@ const ButtonStyled = styled.button`
         margin-top: 1rem;
         color: ${(props) => props.theme.colorGrey2};
         font-size: 1.5rem;
+        transition: all 0.55s ease-in-out;
     }
 
     &:hover{
         color: ${(props) => props.theme.colorGrey0};
+
+        i{
+        color: ${(props) => props.theme.colorGrey0};
+    }
     }
 `
 
