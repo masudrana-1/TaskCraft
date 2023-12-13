@@ -17,7 +17,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
     // const { title, description, date, completed, important } = task;
 
     return (
-        <div>
+        <div className=''>
             <p>{title}</p>
             <p>{description}</p>
             <p className='date'>{date}</p>
