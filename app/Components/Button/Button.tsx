@@ -1,6 +1,8 @@
 "use client"
 
 import { useGlobalState } from '@/app/context/globalContextProvider';
+// import { useClerk } from '@clerk/nextjs';
+// import { useRouter } from 'next/router';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -19,8 +21,10 @@ interface Props{
 
 
 const Button = ({ icon, name, background, padding, border, borderRad, fw, fs, click, type }: Props) => {
-    
+
     const { theme } = useGlobalState();
+    // const { signOut } = useClerk();
+    // const router = useRouter();
 
     return (
         <ButtonStyled

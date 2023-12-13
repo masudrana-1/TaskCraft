@@ -9,11 +9,17 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button/Button';
 import { FaSignOutAlt } from 'react-icons/fa';
+import { useClerk } from '@clerk/nextjs';
+
+
 
 const Sidebar = () => {
 
     // theme 
-    const {theme} = useGlobalState();
+    const { theme } = useGlobalState();
+    
+    // signout button 
+    const { signOut } = useClerk();
     
     // console.log(theme);
 
@@ -61,7 +67,10 @@ const Sidebar = () => {
                     borderRad={"0.8rem"}
                     fw={"500"}
                     fs={"1.2rem"}
-                    icon={<FaSignOutAlt/>}
+                    icon={<FaSignOutAlt />}
+                    click={() => {
+                        signOut(()=> router.push("/signin"))
+                    }}
                 />
             </div>
         </SidebarStyled>
