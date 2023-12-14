@@ -13,7 +13,7 @@ export async function POST(req: Request) {
             return NextResponse.json({ error: "Unauthorized", status: 401 })
         }
 
-        const { title, description, date, completed, important } = await req.json();
+        const { title, description, date, isCompleted, isImportant } = await req.json();
         if (!title || !description || !date) {
             return NextResponse.json({
                 error: "Missing required fields",
@@ -28,17 +28,15 @@ export async function POST(req: Request) {
             });
         }
 
-        const localDate = new Date();
-        const isoDateString = localDate.toISOString();
 
         // create task 
         const task = await prisma.task.create({
             data: {
                 title,
                 description,
-                date: isoDateString,
-                isCompleted: Boolean(completed),
-                isImportant: Boolean(important),
+                date: new Date(),
+                isCompleted,
+                isImportant,
                 userId,
             }
         });

@@ -52,13 +52,18 @@ const CreateContent = () => {
             if (res.data.error) {
                 toast.error(res.data.error)
             }
-            toast.success("Task created successfully. 😊")
+
+            toast.success("Task created successfully")
+
+            // console.log(completed, important)
             
         } catch (error) {
-            toast.error("Something went wrong. 😒")
+            toast.error("Something went wrong")
             console.log(error)
         }
+        // console.log(task)
     }
+
 
     return (
         <form onSubmit={handleSubmit}>

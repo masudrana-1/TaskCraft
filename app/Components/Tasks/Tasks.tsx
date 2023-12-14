@@ -30,7 +30,7 @@ const Tasks = ({title, tasks}: Props) => {
                         title={task.title}
                         description={task.description}
                         date={task.date}
-                        isCompleted={task.completed}
+                        isCompleted={task.isCompleted}
                         id={task.id}
                     />
                 ))}
@@ -39,7 +39,7 @@ const Tasks = ({title, tasks}: Props) => {
                     Add A New Task
                 </button>
             </div>
-           {/* <CreateContent/>  */}
+           <CreateContent/> 
         </TaskStyled>
     );
 };
