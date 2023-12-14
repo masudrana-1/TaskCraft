@@ -4,7 +4,7 @@ import React from 'react';
 import { createContext, useContext, useState } from "react"
 import themes from "./themes"
 import axios from 'axios';
-import toast from 'react-hot-toast/headless';
+import toast from 'react-hot-toast';
 import { useUser } from '@clerk/nextjs';
 
 
@@ -38,7 +38,7 @@ export const GlobalProvider = ({ children }) => {
     // delete task
     const deleteTask = async (id) => {
         try {
-            const res = axios.delete(`/api/tasks/${id}`);
+            const res = await axios.delete(`/api/tasks/${id}`);
             toast.success("Task Deleted. ✅")
 
             allTasks();

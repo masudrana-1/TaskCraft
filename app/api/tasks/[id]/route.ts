@@ -20,8 +20,8 @@ export async function DELETE(
         const task = await prisma.task.delete({
             where: {
                 id,
-            }
-        })
+            },
+        });
 
         console.log("TASK DELETED:", task)
 
