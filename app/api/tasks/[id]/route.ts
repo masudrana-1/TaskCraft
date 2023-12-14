@@ -5,7 +5,10 @@ import prisma from "@/app/utils/connect";
 
 
 // Deleting
-export async function DELETE(req: Request, {params}: {params: {id: string}}) {
+export async function DELETE(
+    req: Request,
+    { params }: { params: { id: string } }
+) {
     try {
         const { userId } = auth();
         const { id } = params;
@@ -14,7 +17,7 @@ export async function DELETE(req: Request, {params}: {params: {id: string}}) {
             return NextResponse.json({ error: "Unauthorized", status: 401 })
         }
 
-        const task = await prisma.task.findMany({
+        const task = await prisma.task.delete({
             where: {
                 id,
             }
