@@ -70,7 +70,7 @@ export async function GET(req: Request) {
             }
         })
 
-        console.log("TASKS", tasks);
+        // console.log("TASKS", tasks);
         
         return NextResponse.json(tasks)
 
