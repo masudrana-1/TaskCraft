@@ -31,10 +31,25 @@ export const GlobalProvider = ({ children }) => {
             setIsLoading(false)
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong. 😒")
+            toast.error("Something went wrong. ❎")
         }
     };
 
+    // delete task
+    const deleteTask = async (id) => {
+        try {
+            const res = axios.delete(`/api/tasks/${id}`);
+            toast.success("Task Deleted. ✅")
+
+            allTasks();
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong. ❎")
+        }
+    }
+
+
+    // load all task 
     React.useEffect(() => {
         if (user) allTasks();
     },[user])
@@ -42,7 +57,9 @@ export const GlobalProvider = ({ children }) => {
     return (
         <GlobalContext.Provider value={{
             theme,
-            tasks
+            tasks,
+            deleteTask,
+            isLoading
         }}>
             <GlobalUpdateContext.Provider value={{}}>
                 {children}
