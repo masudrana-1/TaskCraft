@@ -23,7 +23,7 @@ export async function DELETE(
             },
         });
 
-        console.log("TASK DELETED:", task)
+        // console.log("TASK DELETED:", task)
 
         return NextResponse.json(task)
 
