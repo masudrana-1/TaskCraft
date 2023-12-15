@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button/Button';
 import { FaSignOutAlt } from 'react-icons/fa';
-import { useClerk } from '@clerk/nextjs';
+import { UserButton, useClerk } from '@clerk/nextjs';
 
 
 
@@ -38,6 +38,9 @@ const Sidebar = () => {
                 </div>
                 <div className="image">
                     <Image width={70} height={70} src="/masud.jpg" alt='profile'/>
+                </div>
+                <div className="user-btn absolute z-20 top-0 w-full h-full">
+                    <UserButton/>
                 </div>
                 <h1>
                     <span>Masud</span>
@@ -90,6 +93,24 @@ const SidebarStyled = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
+    .user-btn{
+         .cl-rootBox{
+            width: 100%;
+            height: 100%;
+
+            .cl-userButtonBox{
+                width: 100%;
+                height: 100%;
+
+                .cl-userButtonTrigger{
+                    width: 100%;
+                    height: 100%;
+                    opacity: 0;
+                }
+            }
+         }   
+        }
+
     .profile{
         margin: 1.5rem;
         padding: 1rem 0.8rem;
@@ -101,6 +122,7 @@ const SidebarStyled = styled.nav`
 
         display: flex;
         align-items: center;
+
 
         .profile-overlay{
             position: absolute;
