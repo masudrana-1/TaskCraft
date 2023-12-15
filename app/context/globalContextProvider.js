@@ -51,8 +51,19 @@ export const GlobalProvider = ({ children }) => {
 
     // completed task 
     const completedTasks = tasks.filter((task) => task.isCompleted === true);
-
+    
     // console.log(completedTasks);
+    
+    
+    // important tasks 
+    const importantTasks = tasks.filter((task) => task.isImportant === true);
+    
+    // console.log(importantTasks)
+    
+    // incomplete tasks 
+    const incompleteTasks = tasks.filter((task) => task.isCompleted === false);
+
+    // console.log(incompleteTasks)
 
 
     // load all task 
@@ -66,7 +77,9 @@ export const GlobalProvider = ({ children }) => {
             tasks,
             deleteTask,
             isLoading,
-            completedTasks
+            completedTasks,
+            importantTasks,
+            incompleteTasks
         }}>
             <GlobalUpdateContext.Provider value={{}}>
                 {children}
