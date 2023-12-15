@@ -9,7 +9,7 @@ import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button/Button';
 import { FaSignOutAlt } from 'react-icons/fa';
-import { UserButton, useClerk } from '@clerk/nextjs';
+import { UserButton, useClerk, useUser } from '@clerk/nextjs';
 
 
 
@@ -17,11 +17,20 @@ const Sidebar = () => {
 
     // theme 
     const { theme } = useGlobalState();
+    // console.log(theme);
     
     // signout button 
     const { signOut } = useClerk();
     
-    // console.log(theme);
+
+    // user 
+    const { user } = useUser();
+    // console.log(user)
+
+    const { firstName, lastName, imageUrl, emailAddresses } = user || { firstName: "", lastName: "", imageUrl: "", emailAddresses: [] };
+
+    // const email = emailAddresses[0].emailAddress;
+
 
     const router = useRouter();
     const pathName = usePathname();
@@ -37,14 +46,15 @@ const Sidebar = () => {
 
                 </div>
                 <div className="image">
-                    <Image width={70} height={70} src="/masud.jpg" alt='profile'/>
+                    <Image width={70} height={70} src={imageUrl} alt='profile'/>
                 </div>
                 <div className="user-btn absolute z-20 top-0 w-full h-full">
                     <UserButton/>
                 </div>
                 <h1>
-                    <span>Masud</span>
-                    <span>Rana</span>
+                    {
+                        firstName ? <>{firstName} {lastName}</> : <span className='text-[6px]'>{ emailAddresses[0]?.emailAddress}</span>
+                    }
                 </h1>
             </div>
             <ul className="nav-items">
