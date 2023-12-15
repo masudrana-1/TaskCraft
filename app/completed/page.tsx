@@ -1,12 +1,15 @@
 "use client"
 
 import React from 'react';
+import { useGlobalState } from '../context/globalContextProvider';
+import Tasks from '../Components/Tasks/Tasks';
 
 const page = () => {
+
+    const { completedTasks } = useGlobalState();
+
     return (
-        <div>
-            <h1>Completed</h1>
-        </div>
+       <Tasks tasks={completedTasks} title={"Completed Tasks"}/>
     );
 };
 

@@ -24,7 +24,7 @@ const Tasks = ({title, tasks}: Props) => {
         <TaskStyled theme={theme}>
             <h1>{title}</h1>
             <div className="tasks grid">
-                {tasks.map((task) => (
+                {tasks?.map((task) => (
                     <TaskItem
                         key={task.id}
                         title={task.title}
