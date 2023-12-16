@@ -6,6 +6,7 @@ import React from 'react';
 import styled from 'styled-components';
 import TaskItem from '../TaskItem/TaskItem';
 import { FaPlus } from 'react-icons/fa';
+import Modal from '@/app/completed/Models/Modal';
 
 
 
@@ -16,12 +17,13 @@ interface Props{
 
 const Tasks = ({title, tasks}: Props) => {
 
-    const { theme,  isLoading, openModal } = useGlobalState();
+    const { theme,  isLoading, openModal, modal } = useGlobalState();
     
     // const isLoading = true
 
     return (
         <TaskStyled theme={theme}>
+            {modal && <Modal content={ <CreateContent/>} />}
             <h1>{title}</h1>
             <div className="tasks grid">
                 {tasks?.map((task) => (
