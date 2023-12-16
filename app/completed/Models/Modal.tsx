@@ -11,13 +11,14 @@ interface Props{
 
 const Modal = ({content}: Props ) => {
 
-    const {closeModal} = useGlobalState()
+    const {closeModal, theme} = useGlobalState()
 
     return (
-        <ModalStyled>
+        <ModalStyled theme={theme}>
             <div
                 className="modal-overlay"
                 onClick={closeModal}
+                
             >
             </div>
             <div className="modal-content">
@@ -54,6 +55,11 @@ const ModalStyled = styled.div`
         max-width: 630px;
         width: 100%;
         z-index: 100;
+
+        border-radius: 1rem;
+        background-color: ${(props) => props.theme.colorBg2};
+        box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+        border-radius: ${(props) => props.theme.borderRadiusMd2};
     }
 `;
 

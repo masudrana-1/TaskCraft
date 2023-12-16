@@ -4,6 +4,7 @@ import { useGlobalState } from '@/app/context/globalContextProvider';
 import axios from 'axios';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaPlus } from 'react-icons/fa';
 import styled from 'styled-components';
 
 const CreateContent = () => {
@@ -132,9 +133,13 @@ const CreateContent = () => {
                 />
             </div>
 
-            <div className="submit-btn border border-purple-600">
-                <button type='submit'>
-                    <span>Submit</span>
+            <div className="submit-btn flex justify-end">
+                <button
+                    type='submit'
+                    className='flex justify-center items-center p-3 gap-2 bg-green-800 rounded-xl hover:bg-green-600 hover:text-white'
+                >
+                    <FaPlus/>
+                    Create Task
                 </button>
             </div>
         </ContentStyled>
@@ -147,8 +152,7 @@ const ContentStyled = styled.form`
         font-weight: 600;
     }
 
-    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
-    border-radius: ${(props) => props.theme.borderRadiusMd2};
+    
     color: ${(props) => props.theme.colorGrey1};
 
     .input-control{
@@ -157,9 +161,20 @@ const ContentStyled = styled.form`
         font-weight: 500;
 
 
+        label{
+            margin-bottom: 0.8rem;
+            display: inline-block;
+            font-size: clamp(0.9rem, 5vw, 1.2rem);
+
+            span{
+                color: ${(props) => props.theme.colorGrey3};
+            }
+        }
+
+
         input, textarea{
             width: 100%;
-            border: none;
+            /* border: none; */
             border-radius: 5px;
             padding: 1rem;
             resize: none;

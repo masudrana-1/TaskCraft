@@ -23,6 +23,13 @@ body {
     height: 100vh;
 }
 
+input,
+textarea,
+button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
 .loader {
   transform: rotateZ(45deg);
   perspective: 1000px;
