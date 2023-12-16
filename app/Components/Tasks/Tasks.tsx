@@ -44,7 +44,7 @@ const Tasks = ({title, tasks}: Props) => {
                     Add A New Task
                 </button>
             </div>
-           <CreateContent/> 
+           {/* <CreateContent/>  */}
         </TaskStyled>
     );
 };
