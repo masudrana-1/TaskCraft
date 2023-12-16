@@ -16,7 +16,7 @@ interface Props{
 
 const Tasks = ({title, tasks}: Props) => {
 
-    const { theme,  isLoading } = useGlobalState();
+    const { theme,  isLoading, openModal } = useGlobalState();
     
     // const isLoading = true
 
@@ -34,7 +34,10 @@ const Tasks = ({title, tasks}: Props) => {
                         id={task.id}
                     />
                 ))}
-                <button className="create-task">
+                <button
+                    className="create-task"
+                    onClick={openModal}
+                >
                     <FaPlus />
                     Add A New Task
                 </button>

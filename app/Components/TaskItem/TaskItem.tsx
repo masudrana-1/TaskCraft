@@ -37,6 +37,8 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                                 };
 
                                 updateTask()
+
+                                // console.log(updateTask())
                             }}
                         >
                             Completed
