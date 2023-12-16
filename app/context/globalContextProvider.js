@@ -31,7 +31,7 @@ export const GlobalProvider = ({ children }) => {
             setIsLoading(false)
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong. ❎")
+            toast.error("Something went wrong.")
         }
     };
 
@@ -39,12 +39,29 @@ export const GlobalProvider = ({ children }) => {
     const deleteTask = async (id) => {
         try {
             const res = await axios.delete(`/api/tasks/${id}`);
-            toast.success("Task Deleted. ✅")
+            toast.success("Task Deleted.")
 
             allTasks();
         } catch (error) {
             console.log(error);
-            toast.error("Something went wrong. ❎")
+            toast.error("Something went wrong.")
+        }
+    }
+
+
+    // update task 
+    const updateTask = async (task) => {
+        try {
+            
+            const res = await axios.put(`/api/tasks`, task);
+
+            toast.success("Task Updated")
+
+            allTasks();
+
+        } catch (error) {
+            console.log(error);
+            toast.error("Something went wrong.")
         }
     }
 
@@ -79,7 +96,8 @@ export const GlobalProvider = ({ children }) => {
             isLoading,
             completedTasks,
             importantTasks,
-            incompleteTasks
+            incompleteTasks,
+            updateTask
         }}>
             <GlobalUpdateContext.Provider value={{}}>
                 {children}
