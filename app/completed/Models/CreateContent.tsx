@@ -1,8 +1,10 @@
 "use client"
 
+import { useGlobalState } from '@/app/context/globalContextProvider';
 import axios from 'axios';
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
+import styled from 'styled-components';
 
 const CreateContent = () => {
 
@@ -11,6 +13,10 @@ const CreateContent = () => {
     const [date, setDate] = useState("");
     const [completed, setCompleted] = useState("false");
     const [important, setImportant] = useState("false");
+
+
+    // theme 
+    const { theme } = useGlobalState();
 
 
     const handleChange = (name: string) => (e: any) => {
@@ -66,7 +72,7 @@ const CreateContent = () => {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <ContentStyled onSubmit={handleSubmit} theme={theme}>
             <h1>Create a Task</h1>
             <div className='input-control'>
                 <label htmlFor="title">Title</label>
@@ -131,8 +137,37 @@ const CreateContent = () => {
                     <span>Submit</span>
                 </button>
             </div>
-        </form>
+        </ContentStyled>
     );
 };
+
+const ContentStyled = styled.form`
+    >h1{
+        font-size: clamp(1.2rem, 5vw, 1.6rem);
+        font-weight: 600;
+    }
+
+    box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+    border-radius: ${(props) => props.theme.borderRadiusMd2};
+    color: ${(props) => props.theme.colorGrey1};
+
+    .input-control{
+        position: relative;
+        margin: 1.6rem 0;
+        font-weight: 500;
+
+
+        input, textarea{
+            width: 100%;
+            border: none;
+            border-radius: 5px;
+            padding: 1rem;
+            resize: none;
+
+            background-color: ${(props) => props.theme.colorGreyDark};
+            color: ${(props) => props.theme.colorGrey2};
+        }
+    }
+`;
 
 export default CreateContent;
