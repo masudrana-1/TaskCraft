@@ -17,7 +17,7 @@ const CreateContent = () => {
 
 
     // theme 
-    const { theme } = useGlobalState();
+    const { theme, allTasks, closeModal } = useGlobalState();
 
 
     const handleChange = (name: string) => (e: any) => {
@@ -60,7 +60,12 @@ const CreateContent = () => {
                 toast.error(res.data.error)
             }
 
-            toast.success("Task created successfully")
+            
+            if (!res.data.error) {
+                toast.success("Task created successfully")
+                allTasks();
+                closeModal();
+            }
 
             // console.log(completed, important)
             
