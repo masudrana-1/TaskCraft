@@ -112,7 +112,7 @@ const CreateContent = () => {
                     className='text-black'
                 />
             </div>
-            <div className='input-control'>
+            <div className='input-control flex items-center justify-between toggler'>
                 <label htmlFor="completed">Completed</label>
                 <input
                     type="checkbox"
@@ -122,7 +122,7 @@ const CreateContent = () => {
                     onChange={handleChange("completed")}
                 />
             </div>
-            <div className='input-control'>
+            <div className='input-control flex items-center justify-between toggler'>
                 <label htmlFor="Important">Important</label>
                 <input
                     type="checkbox"
@@ -130,15 +130,16 @@ const CreateContent = () => {
                     id="important"
                     value={important.toString()}
                     onChange={handleChange("important")}
+                    // className='flex justify-between'
                 />
             </div>
 
-            <div className="submit-btn flex justify-end">
+            <div className="submit-btn flex justify-end hover:text-white">
                 <button
                     type='submit'
-                    className='flex justify-center items-center p-3 gap-2 bg-green-800 rounded-xl hover:bg-green-600 hover:text-white'
+                    className='flex justify-center items-center p-3 gap-2 bg-green-800 rounded-xl hover:bg-green-600 hover:text-white transition-all'
                 >
-                    <FaPlus/>
+                    <FaPlus className="hover:text-white"/>
                     Create Task
                 </button>
             </div>
@@ -157,12 +158,12 @@ const ContentStyled = styled.form`
 
     .input-control{
         position: relative;
-        margin: 1.6rem 0;
+        margin: 5px 0;
         font-weight: 500;
 
 
         label{
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
             display: inline-block;
             font-size: clamp(0.9rem, 5vw, 1.2rem);
 
@@ -181,6 +182,16 @@ const ContentStyled = styled.form`
 
             background-color: ${(props) => props.theme.colorGreyDark};
             color: ${(props) => props.theme.colorGrey2};
+        }
+    }
+
+    .toggler{
+        label{
+            flex: 1;
+        }
+
+        input{
+            width: initial;
         }
     }
 `;
