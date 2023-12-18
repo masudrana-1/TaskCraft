@@ -109,11 +109,27 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
     flex-direction: column;
     justify-content: space-between;
 
-    /* collapsed  */
-    transition: all 0.3s cubic-bezier(0.53, 0.21, 0, 1);
-    transform: ${(props)=> props.collapsed ? "translateX(-118%)" : "translateX(0)"};
+
+    @media screen and (max-width: 768px){
+        position: fixed;
+        height: calc(100vh - 2rem);
+        z-index: 100;
+
+        /* collapsed  */
+        transition: all 0.3s cubic-bezier(0.53, 0.21, 0, 1);
+        transform: ${(props) => props.collapsed ? "translateX(-107%)" : "translateX(0)"};
+        
+        .toggle-nav{
+            display: block !important;
+    
+        }
+
+    }
+
+    
 
     .toggle-nav{
+        display: none;
         padding: 10px 0.9rem;
         position: absolute;
         right: -36px;
@@ -126,11 +142,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         border-bottom: 2px solid ${(props) => props.theme.borderColor2};
     }
 
-    @media screen and (max-width: 768px){
-        position: fixed;
-        height: calc(100vh - 2rem);
-        z-index: 100;
-    }
+    
 
     .user-btn{
          .cl-rootBox{
