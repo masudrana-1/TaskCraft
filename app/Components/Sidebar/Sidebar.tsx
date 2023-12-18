@@ -103,6 +103,12 @@ const SidebarStyled = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
+    @media screen and (max-width: 768px){
+        position: fixed;
+        height: calc(100vh - 2rem);
+        z-index: 100;
+    }
+
     .user-btn{
          .cl-rootBox{
             width: 100%;
