@@ -33,6 +33,10 @@ export const GlobalProvider = ({ children }) => {
         setModal(false);
     };
 
+    const collapsedMenu = () => {
+        setCollapsed(!collapsed);
+    }
+
 
     // all task load 
     const allTasks = async () => {
@@ -127,6 +131,7 @@ export const GlobalProvider = ({ children }) => {
             openModal,
             closeModal,
             collapsed,
+            collapsedMenu,
 
         }}>
             <GlobalUpdateContext.Provider value={{}}>

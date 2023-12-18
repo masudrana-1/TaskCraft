@@ -16,7 +16,7 @@ import { UserButton, useClerk, useUser } from '@clerk/nextjs';
 const Sidebar = () => {
 
     // theme 
-    const { theme, collapsed } = useGlobalState();
+    const { theme, collapsed, collapsedMenu } = useGlobalState();
     // console.log(theme);
     
     // signout button 
@@ -40,8 +40,11 @@ const Sidebar = () => {
     }
 
     return (
-        <SidebarStyled theme={theme}>
-            <button className='toggle-nav'>
+        <SidebarStyled theme={theme} collapsed={collapsed}>
+            <button
+                className='toggle-nav'
+                onClick={collapsedMenu}
+            >
                 {collapsed? <FaBars /> : <FaArrowLeft className="text-sm"/>}
             </button>
             <div className="profile">
@@ -95,7 +98,7 @@ const Sidebar = () => {
 
 
 // style components 
-const SidebarStyled = styled.nav`
+const SidebarStyled = styled.nav<{collapsed: boolean}>`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
     background-color: ${(props) => props.theme.colorBg2};
@@ -106,8 +109,12 @@ const SidebarStyled = styled.nav`
     flex-direction: column;
     justify-content: space-between;
 
+    /* collapsed  */
+    transition: all 0.3s cubic-bezier(0.53, 0.21, 0, 1);
+    transform: ${(props)=> props.collapsed ? "translateX(-118%)" : "translateX(0)"};
+
     .toggle-nav{
-        padding: 10px;
+        padding: 10px 0.9rem;
         position: absolute;
         right: -36px;
         top: 5rem;
