@@ -8,7 +8,7 @@ import menu from "../../utils/menu";
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button/Button';
-import { FaSignOutAlt } from 'react-icons/fa';
+import { FaArrowLeft, FaArrowRight, FaBars, FaCaretRight, FaSignOutAlt } from 'react-icons/fa';
 import { UserButton, useClerk, useUser } from '@clerk/nextjs';
 
 
@@ -16,7 +16,7 @@ import { UserButton, useClerk, useUser } from '@clerk/nextjs';
 const Sidebar = () => {
 
     // theme 
-    const { theme } = useGlobalState();
+    const { theme, collapsed } = useGlobalState();
     // console.log(theme);
     
     // signout button 
@@ -41,6 +41,9 @@ const Sidebar = () => {
 
     return (
         <SidebarStyled theme={theme}>
+            <button className='toggle-nav'>
+                {collapsed? <FaBars /> : <FaArrowLeft className="text-sm"/>}
+            </button>
             <div className="profile">
                 <div className="profile-overlay">
 
@@ -102,6 +105,19 @@ const SidebarStyled = styled.nav`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    .toggle-nav{
+        padding: 10px;
+        position: absolute;
+        right: -36px;
+        top: 5rem;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        background-color: ${(props) => props.theme.colorBg2};
+        border-right: 2px solid ${(props) => props.theme.borderColor2};
+        border-top: 2px solid ${(props) => props.theme.borderColor2};
+        border-bottom: 2px solid ${(props) => props.theme.borderColor2};
+    }
 
     @media screen and (max-width: 768px){
         position: fixed;

@@ -21,6 +21,7 @@ export const GlobalProvider = ({ children }) => {
     const [isLoading, setIsLoading] = useState(false);
     const [tasks, setTasks] = useState([]);
     const [modal, setModal] = useState(false);
+    const [collapsed, setCollapsed] = useState(false);
 
 
     // create task modal 
@@ -48,7 +49,7 @@ export const GlobalProvider = ({ children }) => {
                 );
             });
 
-            console.log(sorted)
+            // console.log(sorted)
 
             setTasks(sorted);
             setIsLoading(false)
@@ -125,6 +126,7 @@ export const GlobalProvider = ({ children }) => {
             modal,
             openModal,
             closeModal,
+            collapsed,
 
         }}>
             <GlobalUpdateContext.Provider value={{}}>
