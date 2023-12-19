@@ -1,6 +1,6 @@
 // import { list, check, todo, home } from ""
 
-import { FaHome, FaList, FaCheck, FaTasks } from "react-icons/fa";
+import { FaHome, FaList, FaCheck, FaTasks, FaCross } from "react-icons/fa";
 
 const menu = [
     {
@@ -23,7 +23,7 @@ const menu = [
     },
     {
         id: 4,
-        title: "Do It Now",
+        title: "Incomplete",
         icon: <FaTasks/>,
         link: "/incomplete",
     },

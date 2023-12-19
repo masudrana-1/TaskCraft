@@ -101,6 +101,7 @@ const Sidebar = () => {
 const SidebarStyled = styled.nav<{collapsed: boolean}>`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
+    /* height: 100vh; */
     /* background-color: ${(props) => props.theme.colorBg2}; */
     border-right: 2px solid ${(props) => props.theme.borderColor2};
     /* border-radius: 1rem; */
@@ -112,8 +113,10 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
 
     @media screen and (max-width: 768px){
         position: fixed;
-        height: calc(100vh - 2rem);
+        height: 100vh;
         z-index: 100;
+
+        border-right: none;
 
         /* collapsed  */
         transition: all 0.3s cubic-bezier(0.53, 0.21, 0, 1);
@@ -169,7 +172,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         border-radius: 1rem;
         cursor: pointer;
         font-weight: 500;
-        color: ${(props) => props.theme.colorGrey0};
+        /* color: ${(props) => props.theme.colorGrey0}; */
 
         display: flex;
         align-items: center;
@@ -183,7 +186,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             height: 100%;
             backdrop-filter: blur(10px);
             z-index: 0;
-            background: ${(props) => props.theme.colorBg3};
+            /* background: ${(props) => props.theme.colorBg3}; */
             transition: all 0.55s linear;
             border-radius: 1rem;
 
