@@ -45,7 +45,7 @@ const ModalStyled = styled.div`
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0,0,0,0.45);
+        background-color: rgba(0, 0, 0, 0.715);
         filter: blur(4px);
     }
 
@@ -57,8 +57,9 @@ const ModalStyled = styled.div`
         z-index: 100;
 
         border-radius: 1rem;
-        background-color: ${(props) => props.theme.colorBg2};
-        box-shadow: 0 0 1rem rgba(0,0,0,0.3);
+        background-color: #12222efa;
+        box-shadow: inset 0 0 40px 2px #0d0b0bf8;
+        /* box-shadow: 0 0 1rem rgba(0,0,0,0.3); */
         border-radius: ${(props) => props.theme.borderRadiusMd2};
     }
 `;

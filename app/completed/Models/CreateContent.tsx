@@ -185,7 +185,8 @@ const ContentStyled = styled.form`
             padding: 1rem;
             resize: none;
 
-            background-color: ${(props) => props.theme.colorGreyDark};
+            background-color: #122131f8;
+            box-shadow: inset 0 0 40px 2px #000000f8;
             color: ${(props) => props.theme.colorGrey2};
         }
     }
