@@ -104,6 +104,7 @@ const TaskStyled = styled.main`
         &:hover{
             /* background-color: ${(props) => props.theme.colorGrey5}; */
             color: ${(props) => props.theme.colorGrey1};
+            box-shadow: 0 0 5px 5px #180629f8;
             border: none;
             transition: all 0.3s ease;
         }
