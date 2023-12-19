@@ -21,7 +21,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
     const { theme, deleteTask, updateTask } = useGlobalState();
 
     return (
-        <TaskItemsStyled theme={theme}>
+        <TaskItemsStyled theme={theme} className='bg-[#12222efa] hover:bg-[#0e1d27fa] transition-all'>
             <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
@@ -76,9 +76,20 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
 const TaskItemsStyled = styled.div`
     padding: 1.2rem 1rem;
     border-radius: 1rem;
-    background-color: ${(props) => props.theme.borderColor2};
-    box-shadow: ${(props) => props.theme.shadow7};
-    border: 2px solid ${(props) => props.theme.borderColor2};
+    /* background-color: ${(props) => props.theme.borderColor2}; */
+    /* box-shadow: ${(props) => props.theme.shadow7}; */
+    /* border: 2px solid ${(props) => props.theme.borderColor2}; */
+
+    /* background-color: #171923e6; */
+
+    /* box-shadow: 10px #fff; */
+
+    box-shadow: 0 0 5px 5px #04090df8;
+
+    /* :hover{
+        box-shadow: 0 0 5px 5px #08131cf8;
+    } */
+
     height: 16rem;
     display: flex;
     flex-direction: column;

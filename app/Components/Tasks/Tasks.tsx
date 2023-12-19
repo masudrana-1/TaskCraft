@@ -37,7 +37,7 @@ const Tasks = ({title, tasks}: Props) => {
                     />
                 ))}
                 <button
-                    className="create-task"
+                    className="create-task className='bg-[#12222efa] hover:bg-[#0e1d27fa] transition-all'"
                     onClick={openModal}
                 >
                     <FaPlus />
@@ -93,15 +93,15 @@ const TaskStyled = styled.main`
         justify-content: center;
         gap: 0.5rem;
         height: 16rem;
-        color: ${(props) => props.theme.colorGrey2};
+        /* color: ${(props) => props.theme.colorGrey2}; */
         font-weight: 600;
         cursor: pointer;
         border-radius: 1rem;
-        border: 3px dashed ${(props) => props.theme.colorGrey5};
+        border: 3px dotted ${(props) => props.theme.colorGrey5};
         transition: all 0.3s ease;
 
         &:hover{
-            background-color: ${(props) => props.theme.colorGrey5};
+            /* background-color: ${(props) => props.theme.colorGrey5}; */
             color: ${(props) => props.theme.colorGrey1};
         }
     }
