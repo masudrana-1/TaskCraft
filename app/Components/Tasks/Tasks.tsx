@@ -98,11 +98,14 @@ const TaskStyled = styled.main`
         cursor: pointer;
         border-radius: 1rem;
         border: 3px dotted ${(props) => props.theme.colorGrey5};
+        box-shadow: 0 0 40px 1px #000000f8;
         transition: all 0.3s ease;
 
         &:hover{
             /* background-color: ${(props) => props.theme.colorGrey5}; */
             color: ${(props) => props.theme.colorGrey1};
+            border: none;
+            transition: all 0.3s ease;
         }
     }
 `;

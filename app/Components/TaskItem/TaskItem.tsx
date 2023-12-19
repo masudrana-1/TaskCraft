@@ -84,7 +84,7 @@ const TaskItemsStyled = styled.div`
 
     /* box-shadow: 10px #fff; */
 
-    box-shadow: 0 0 5px 5px #04090df8;
+    box-shadow: 0 0 40px 1px #000000f8;
 
     /* :hover{
         box-shadow: 0 0 5px 5px #08131cf8;
