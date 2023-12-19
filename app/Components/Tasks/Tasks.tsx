@@ -22,7 +22,7 @@ const Tasks = ({title, tasks}: Props) => {
     // const isLoading = true
 
     return (
-        <TaskStyled theme={theme}>
+        <TaskStyled theme={theme} className='bg-[#0b0f1c] shadow-xl'>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1>{title}</h1>
             <div className="tasks grid">
@@ -54,8 +54,8 @@ const TaskStyled = styled.main`
     
     padding: 2rem;
     width: 100%;
-    background-color: ${(props) => props.theme.colorBg2};
-    border: 2px solid ${(props) => props.theme.borderColor2};
+    /* background-color: ${(props) => props.theme.colorBg2}; */
+    /* border: 2px solid ${(props) => props.theme.borderColor2}; */
     border-radius: 1rem;
     overflow-y: auto;
 
