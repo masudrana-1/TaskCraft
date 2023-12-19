@@ -42,10 +42,10 @@ const Sidebar = () => {
     return (
         <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#0a111e] shadow-xl'>
             <button
-                className='toggle-nav'
+                className='toggle-nav bg-[#0a111e] shadow-xl'
                 onClick={collapsedMenu}
             >
-                {collapsed? <FaBars /> : <FaArrowLeft className="text-sm"/>}
+                {collapsed? <FaBars /> : <FaArrowLeft/>}
             </button>
             <div className="profile">
                 <div className="profile-overlay">
@@ -102,8 +102,8 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
     /* background-color: ${(props) => props.theme.colorBg2}; */
-    /* border: 2px solid ${(props) => props.theme.borderColor2}; */
-    border-radius: 1rem;
+    border-right: 2px solid ${(props) => props.theme.borderColor2};
+    /* border-radius: 1rem; */
 
     display: flex;
     flex-direction: column;
@@ -132,14 +132,14 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         display: none;
         padding: 10px 0.9rem;
         position: absolute;
-        right: -36px;
+        right: -43px;
         top: 5rem;
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        background-color: ${(props) => props.theme.colorBg2};
-        border-right: 2px solid ${(props) => props.theme.borderColor2};
-        border-top: 2px solid ${(props) => props.theme.borderColor2};
-        border-bottom: 2px solid ${(props) => props.theme.borderColor2};
+        /* background-color: ${(props) => props.theme.colorBg2}; */
+        /* border-right: 2px solid ${(props) => props.theme.borderColor2}; */
+        /* border-top: 2px solid ${(props) => props.theme.borderColor2}; */
+        /* border-bottom: 2px solid ${(props) => props.theme.borderColor2}; */
     }
 
     
