@@ -306,6 +306,8 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
     .active::before{
         width: 0.3rem;
     }
+
+    
 `;
 
 export default Sidebar;

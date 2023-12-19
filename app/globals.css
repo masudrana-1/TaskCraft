@@ -23,6 +23,9 @@ body {
     height: 100vh;
 }
 
+.cl-internal-1vi7rps {
+  background-color: #858ea5;
+}
 @media screen and (max-width: 768px) {
   body {
     font-size: 15px;
