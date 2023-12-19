@@ -22,7 +22,7 @@ const Tasks = ({title, tasks}: Props) => {
     // const isLoading = true
 
     return (
-        <TaskStyled theme={theme} className='bg-[#0b0f1c] shadow-xl'>
+        <TaskStyled theme={theme} className='bg-[#0a111e] shadow-xl'>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1>{title}</h1>
             <div className="tasks grid">
