@@ -135,6 +135,7 @@ const CreateContent = () => {
                     id="important"
                     value={important.toString()}
                     onChange={handleChange("important")}
+                    // className="bg-slate-50"
                     // className='flex justify-between'
                 />
             </div>
