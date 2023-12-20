@@ -18,8 +18,6 @@ interface Props{
 const Tasks = ({title, tasks}: Props) => {
 
     const { theme,  isLoading, openModal, modal } = useGlobalState();
-    
-    // const isLoading = true
 
     return (
         <TaskStyled theme={theme} className='bg-[#0a111e] shadow-xl'>
@@ -44,7 +42,6 @@ const Tasks = ({title, tasks}: Props) => {
                     Add A New Task
                 </button>
             </div>
-           {/* <CreateContent/>  */}
         </TaskStyled>
     );
 };
@@ -54,9 +51,6 @@ const TaskStyled = styled.main`
     
     padding: 2rem;
     width: 100%;
-    /* background-color: ${(props) => props.theme.colorBg2}; */
-    /* border: 2px solid ${(props) => props.theme.borderColor2}; */
-    /* border-radius: 1rem; */
     overflow-y: auto;
 
     height: 100%;
@@ -81,7 +75,6 @@ const TaskStyled = styled.main`
             bottom: -0.5rem;
             width: 3rem;
             height: 0.2rem;
-            /* background-color: black; */
             background-color: ${(props) => props.theme.activePrimaryGreen};
             border-radius: 0.5rem;
         }
@@ -93,19 +86,15 @@ const TaskStyled = styled.main`
         justify-content: center;
         gap: 0.5rem;
         height: 16rem;
-        /* color: ${(props) => props.theme.colorGrey2}; */
         font-weight: 600;
         cursor: pointer;
         border-radius: 1rem;
         border: 3px dotted ${(props) => props.theme.colorGrey5};
-        /* box-shadow: 0 0 40px 1px #000000f8; */
         box-shadow: inset 0 0 60px 4px #000000f8;
         transition: all 0.3s ease;
 
         &:hover{
-            /* background-color: ${(props) => props.theme.colorGrey5}; */
             color: ${(props) => props.theme.colorGrey1};
-            /* box-shadow: 0 0 5px 5px #180629f8; */
             box-shadow: inset 0 0 80px 10px #000000f8;
             border: none;
             transition: all 0.3s ease;

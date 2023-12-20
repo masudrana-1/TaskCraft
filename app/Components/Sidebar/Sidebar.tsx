@@ -101,10 +101,7 @@ const Sidebar = () => {
 const SidebarStyled = styled.nav<{collapsed: boolean}>`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
-    /* height: 100vh; */
-    /* background-color: ${(props) => props.theme.colorBg2}; */
     border-right: 2px solid ${(props) => props.theme.borderColor2};
-    /* border-radius: 1rem; */
 
     display: flex;
     flex-direction: column;
@@ -139,10 +136,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         top: 5rem;
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
-        /* background-color: ${(props) => props.theme.colorBg2}; */
-        /* border-right: 2px solid ${(props) => props.theme.borderColor2}; */
-        /* border-top: 2px solid ${(props) => props.theme.borderColor2}; */
-        /* border-bottom: 2px solid ${(props) => props.theme.borderColor2}; */
     }
 
     
@@ -172,7 +165,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         border-radius: 1rem;
         cursor: pointer;
         font-weight: 500;
-        /* color: ${(props) => props.theme.colorGrey0}; */
 
         display: flex;
         align-items: center;
@@ -186,7 +178,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             height: 100%;
             backdrop-filter: blur(10px);
             z-index: 0;
-            /* background: ${(props) => props.theme.colorBg3}; */
             transition: all 0.55s linear;
             border-radius: 1rem;
 
@@ -199,7 +190,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             flex-direction: column;
 
             line-height: 1.4rem;
-            /* margin-left: 10px; */
         }
 
         .image, h1{
@@ -258,7 +248,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             top: 0;
             width: 0;
             height: 100%;
-            /* background-color: black; */
             background-color: ${(props) => props.theme.activeNavLinkHover};
             z-index: 1;
             transition: all 0.3s ease-in-out;
@@ -271,8 +260,6 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             top: 0;
             width: 0;
             height: 100%;
-            /* background-color: gray; */
-            /* background-color: ${(props) => props.theme.colorGreenDark}; */
 
             border-bottom-left-radius: 5px;
             border-top-left-radius: 5px;

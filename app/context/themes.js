@@ -16,8 +16,6 @@ const themes = [
         colorGreenDark: "#27AE60",
         colorGreenLight: "#dbe1e8",
         activeNavLink: "#00253e",
-        // activeNavLink: "rgba(230, 230, 230, .87)",
-        // activeNavLinkHover: "#C5C5C5",
         activeNavLinkHover: "#173753",
         colorPrimary: "#7263F3",
         colorPrimary2: "#705DF2",

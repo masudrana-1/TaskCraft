@@ -16,7 +16,7 @@ const CreateContent = () => {
     const [important, setImportant] = useState("false");
 
 
-    // theme 
+    // distructure from Global state
     const { theme, allTasks, closeModal } = useGlobalState();
 
 
@@ -135,8 +135,6 @@ const CreateContent = () => {
                     id="important"
                     value={important.toString()}
                     onChange={handleChange("important")}
-                    // className="bg-slate-50"
-                    // className='flex justify-between'
                 />
             </div>
 
@@ -181,7 +179,6 @@ const ContentStyled = styled.form`
 
         input, textarea{
             width: 100%;
-            /* border: none; */
             border-radius: 5px;
             padding: 1rem;
             resize: none;

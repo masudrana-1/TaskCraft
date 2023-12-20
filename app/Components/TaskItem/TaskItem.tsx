@@ -15,8 +15,6 @@ interface Props{
 }
 
 const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
-    
-    // const { title, description, date, completed, important } = task;
 
     const { theme, deleteTask, updateTask } = useGlobalState();
 
@@ -95,22 +93,9 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
 const TaskItemsStyled = styled.div`
     padding: 1.2rem 1rem;
     border-radius: 1rem;
-    /* background-color: ${(props) => props.theme.borderColor2}; */
-    /* box-shadow: ${(props) => props.theme.shadow7}; */
-    /* border: 2px solid ${(props) => props.theme.borderColor2}; */
-
-    /* background-color: #171923e6; */
-
-    /* box-shadow: 10px #fff; */
-
-    
-    /* refercence color  */
-    /* bg-[#12222efa] hover:bg-[#0e1d27fa] */
-    /* box-shadow: 0 0 40px 1px #a63939f8; */
     box-shadow: inset 0 0 60px 4px #000000f8;
     
     &:hover{
-            /* box-shadow: inset 0 0 5px 5px #180629f8; */
             box-shadow: inset 0 0 80px 20px #000000f8;
         }
 
@@ -129,7 +114,6 @@ const TaskItemsStyled = styled.div`
     }
 
     .task-footer{
-        /* display: flex; */
         align-items: center;
         gap: 1.2rem;
 
@@ -143,13 +127,6 @@ const TaskItemsStyled = styled.div`
                 color: ${(props) => props.theme.colorGrey2};
             }
         }
-
-        /* .important{
-            margin-left: auto;
-        }
-        .edit{
-            margin-left: auto;
-        } */
 
         .completed, .incomplete{
             display: inline-block;
