@@ -34,13 +34,13 @@ export async function POST(req: Request) {
             data: {
                 title,
                 description,
-                date: new Date(),
-                isCompleted: Boolean(completed),
-                isImportant: Boolean(important),
+                date,
+                isCompleted: completed === "true" ? true : false,
+                isImportant: important === "true" ? true : false,
                 userId,
             }
         });
-        // console.log("Task created", task);
+        console.log("Task created", task);
         
         return NextResponse.json(task)
 

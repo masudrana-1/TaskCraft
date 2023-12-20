@@ -15,7 +15,7 @@ model Task{
   id            String    @id @default(cuid()) @map("_id")
   title         String
   description   String
-  date          DateTime  // Use DateTime for date and time
+  date          String  // Use DateTime for date and time
   isCompleted   Boolean   @default(false)
   isImportant   Boolean   @default(false)
   createdAt     DateTime  @default(now()) @map("created_at")
