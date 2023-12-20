@@ -25,7 +25,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
             <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
-            <div className="task-footer">
+            <div className="task-footer flex justify-between">
                 {
                     isCompleted ? (
                         <button
@@ -59,7 +59,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                             </button>
                     )
                 }
-                <div className='flex gap-3'>
+                <div className='flex gap-5'>
                     <button className="important"><FaStar/></button>
                     <button className="edit"><FaEdit/></button>
                     <button 
@@ -113,7 +113,7 @@ const TaskItemsStyled = styled.div`
     }
 
     .task-footer{
-        display: flex;
+        /* display: flex; */
         align-items: center;
         gap: 1.2rem;
 
@@ -128,12 +128,12 @@ const TaskItemsStyled = styled.div`
             }
         }
 
-        .important{
+        /* .important{
             margin-left: auto;
         }
         .edit{
             margin-left: auto;
-        }
+        } */
 
         .completed, .incomplete{
             display: inline-block;
