@@ -236,7 +236,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             }
 
             img{
-                transform: scale(1.1);
+                transform: scale(4.2);
             }
         }
     }
