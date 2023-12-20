@@ -60,7 +60,13 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                     )
                 }
                 <div className='flex gap-5'>
-                    <button className="important"><FaStar/></button>
+                    <div className="relative inline-block group">
+                        <button className=" text-white py-2 rounded"><FaStar/></button>
+                        <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
+                            Important
+                        </div>
+                    </div>
+                    
                     <button className="edit"><FaEdit/></button>
                     <button 
                         className="delete"
