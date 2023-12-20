@@ -2,7 +2,7 @@
 
 import { useGlobalState } from '@/app/context/globalContextProvider';
 import React from 'react';
-import { FaEdit, FaTrash } from 'react-icons/fa';
+import { FaEdit, FaStar, FaTrash } from 'react-icons/fa';
 import styled from 'styled-components';
 
 interface Props{
@@ -59,15 +59,18 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                             </button>
                     )
                 }
-                <button className="edit"><FaEdit/></button>
-                <button 
-                    className="delete"
-                    onClick={() => {
-                        deleteTask(id)
-                    }}
-                >
-                    <FaTrash />
-                </button>
+                <div className='flex gap-3'>
+                    <button className="important"><FaStar/></button>
+                    <button className="edit"><FaEdit/></button>
+                    <button 
+                        className="delete"
+                        onClick={() => {
+                            deleteTask(id)
+                        }}
+                    >
+                        <FaTrash />
+                    </button>
+                </div>
             </div>
         </TaskItemsStyled>
     );
@@ -125,6 +128,9 @@ const TaskItemsStyled = styled.div`
             }
         }
 
+        .important{
+            margin-left: auto;
+        }
         .edit{
             margin-left: auto;
         }
