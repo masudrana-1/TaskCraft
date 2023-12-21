@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 const page = () => {
   const searchParams = useSearchParams();
   const search = searchParams.get("redirect_url");
-  console.log(search);
 
   useEffect(() => {
     if (search) {
