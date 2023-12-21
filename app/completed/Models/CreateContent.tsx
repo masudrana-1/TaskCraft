@@ -52,26 +52,25 @@ const CreateContent = () => {
 
     console.log(task);
 
-    // try {
-    //     const res = await axios.post("/api/tasks", task);
+    try {
+      const res = await axios.post("/api/tasks", task);
 
-    //     if (res.data.error) {
-    //         toast.error(res.data.error)
-    //     }
+      if (res.data.error) {
+        toast.error(res.data.error);
+      }
 
-    //     if (!res.data.error) {
-    //         toast.success("Task created successfully")
-    //         allTasks();
-    //         closeModal();
-    //     }
+      if (!res.data.error) {
+        toast.success("Task created successfully");
+        allTasks();
+        closeModal();
+      }
 
-    //     // console.log(completed, important)
-
-    // } catch (error) {
-    //     toast.error("Something went wrong")
-    //     console.log(error)
-    // }
-    // console.log(task)
+      // console.log(completed, important)
+    } catch (error) {
+      toast.error("Something went wrong");
+      console.log(error);
+    }
+    console.log(task);
   };
 
   return (
