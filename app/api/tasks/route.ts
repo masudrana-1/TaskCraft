@@ -14,22 +14,16 @@ export async function POST(req: Request) {
       });
     }
 
-    const {
-      title,
-      description,
-      date,
-      completed,
-      important,
-    } = await req.json();
+    const {title, description, date, completed, important,} = await req.json();
 
-    console.log(
-      title,
-      description,
-      date,
-      important,
-      completed,
-      important
-    );
+    // console.log(
+    //   title,
+    //   description,
+    //   date,
+    //   important,
+    //   completed,
+    //   important
+    // );
 
     if (!title || !description || !date) {
       return NextResponse.json({
@@ -98,10 +92,44 @@ export async function GET(req: Request) {
 }
 
 // Update
+// export async function PUT(req: Request) {
+//   try {
+//     const { userId } = auth();
+//     const { isCompleted, id } = await req.json();
+
+//     if (!userId) {
+//       return NextResponse.json({
+//         error: "Unauthorized",
+//         status: 401,
+//       });
+//     }
+
+//     const task = await prisma.task.update({
+//       where: {
+//         id,
+//       },
+//       data: {
+//         isCompleted,
+//       },
+//     });
+
+//     console.log("Task Updated:", task);
+
+//     return NextResponse.json(task);
+
+
+//   } catch (error) {
+//     console.log("ERROR UPDATING TASKS:", error);
+//     return NextResponse.json({
+//       error: "Error updating task",
+//       status: 400,
+//     });
+//   }
+// }
+
 export async function PUT(req: Request) {
   try {
     const { userId } = auth();
-    const { isCompleted, id } = await req.json();
 
     if (!userId) {
       return NextResponse.json({
@@ -109,6 +137,20 @@ export async function PUT(req: Request) {
         status: 401,
       });
     }
+
+    // Check if request body is empty
+    const requestData = await req.json();
+    if (!requestData) {
+      console.error("Empty request body");
+      return NextResponse.json({
+        error: "Empty request body",
+        status: 400,
+      });
+    }
+
+    const { isCompleted, id } = requestData;
+
+    console.log("Received data:", requestData);
 
     const task = await prisma.task.update({
       where: {
@@ -123,7 +165,7 @@ export async function PUT(req: Request) {
 
     return NextResponse.json(task);
   } catch (error) {
-    console.log("ERROR UPDATING TASKS:", error);
+    console.error("ERROR UPDATING TASKS:", error);
     return NextResponse.json({
       error: "Error updating task",
       status: 400,
