@@ -22,8 +22,9 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
     const { theme, deleteTask, updateTask, modal, openModal } = useGlobalState();
 
     return (
-        <TaskItemsStyled theme={theme} className='bg-[#0d1f2cfa] hover:bg-[#213846fa] transition-all'>
+        <TaskItemsStyled theme={theme} className='bg-[#0d1f2cfa] hover:bg-[#213846fa] transition-all shadow shadow-slate-100'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
+            {/* 0d1f2cfa */}
             <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
@@ -114,6 +115,7 @@ const TaskItemsStyled = styled.div`
     
     &:hover{
             box-shadow: inset 0 0 80px 20px #000000f8;
+            transform: scale(1.1);
         }
 
     height: 16rem;
