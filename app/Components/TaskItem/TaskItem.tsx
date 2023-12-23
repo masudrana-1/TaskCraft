@@ -71,7 +71,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                                 updateTask(task)
                             }}
                         >
-                            <FaStar />
+                            {isImportant ? <FaStar className="text-red-700"/> : <FaStar />}
                         </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Important
