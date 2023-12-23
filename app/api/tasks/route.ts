@@ -148,7 +148,7 @@ export async function PUT(req: Request) {
       });
     }
 
-    const { isCompleted, id } = requestData;
+    const { isCompleted, isImportant, id } = requestData;
 
     // console.log("Received data:", requestData);
 
@@ -158,6 +158,7 @@ export async function PUT(req: Request) {
       },
       data: {
         isCompleted,
+        isImportant,
       },
     });
 

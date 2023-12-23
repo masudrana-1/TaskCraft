@@ -27,11 +27,11 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={inter.className}>
-          <NextTopLoader
+          {/* <NextTopLoader
             height={2}
             color='#27AE60'
             easing='cubic-bezier(0.53, 0.21, 0, 1)'
-          />
+          /> */}
           <ContextProvider>
             <GlobalStylesProvider>
               {userId && <Sidebar/>}

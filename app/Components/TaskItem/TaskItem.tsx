@@ -10,11 +10,12 @@ interface Props{
     description: string,
     date: string,
     isCompleted: boolean;
+    isImportant: boolean;
     id: string;
     
 }
 
-const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
+const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: Props) => {
 
     const { theme, deleteTask, updateTask } = useGlobalState();
 
@@ -34,7 +35,7 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                                     isCompleted: !isCompleted
                                 };
 
-                                updateTask()
+                                updateTask(task)
 
                                 // console.log(updateTask())
                             }}
@@ -59,7 +60,19 @@ const TaskItem = ({ title, description, date, isCompleted, id  }: Props) => {
                 }
                 <div className='flex gap-5'>
                     <div className="relative inline-block group">
-                        <button className=" text-white py-2 rounded"><FaStar/></button>
+                        <button
+                            className=" text-white py-2 rounded"
+                            onClick={() => {
+                                const task = {
+                                    id,
+                                    isImportant: !isImportant
+                                };
+
+                                updateTask(task)
+                            }}
+                        >
+                            <FaStar />
+                        </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Important
                         </div>
