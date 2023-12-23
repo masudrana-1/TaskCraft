@@ -150,7 +150,7 @@ export async function PUT(req: Request) {
 
     const { isCompleted, id } = requestData;
 
-    console.log("Received data:", requestData);
+    // console.log("Received data:", requestData);
 
     const task = await prisma.task.update({
       where: {
