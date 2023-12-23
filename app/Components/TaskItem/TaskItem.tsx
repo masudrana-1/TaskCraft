@@ -84,14 +84,14 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                             Edit
                         </div>
                     </button>
-                    <div className='relative inline-block group'>
+                    <div className='relative inline-block group '>
                         <button 
                         className="delete text-white py-2 rounded"
                         onClick={() => {
                             deleteTask(id)
                         }}
                     >
-                        <FaTrash />
+                        <FaTrash className="hover:text-red-600"/>
                         </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Delete
