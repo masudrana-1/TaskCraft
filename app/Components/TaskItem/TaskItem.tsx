@@ -1,5 +1,7 @@
 "use client"
 
+import Modal from '@/app/completed/Models/Modal';
+// import UpdateContent from '@/app/completed/Models/UpdateContent';
 import { useGlobalState } from '@/app/context/globalContextProvider';
 import React from 'react';
 import { FaEdit, FaStar, FaTrash } from 'react-icons/fa';
@@ -17,10 +19,11 @@ interface Props{
 
 const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: Props) => {
 
-    const { theme, deleteTask, updateTask } = useGlobalState();
+    const { theme, deleteTask, updateTask, modal, openModal } = useGlobalState();
 
     return (
         <TaskItemsStyled theme={theme} className='bg-[#0d1f2cfa] hover:bg-[#213846fa] transition-all'>
+            {/* {modal && <Modal content={ <UpdateContent/>} />} */}
             <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
@@ -80,7 +83,8 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                     
                     <button className="relative inline-block group">
                         <button className=" text-white py-2 rounded"><FaEdit/></button>
-                        <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
+                        <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2"
+                        >
                             Edit
                         </div>
                     </button>
