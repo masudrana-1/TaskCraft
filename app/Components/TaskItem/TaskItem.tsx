@@ -24,7 +24,6 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
     return (
         <TaskItemsStyled theme={theme} className='bg-[#0d1f2cfa] hover:bg-[#213846fa] transition-all shadow shadow-slate-100'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
-            {/* 0d1f2cfa */}
             <h1>{title}</h1>
             <p>{description}</p>
             <p className='date'>{date}</p>
@@ -40,8 +39,6 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                                 };
 
                                 updateTask(task)
-
-                                // console.log(updateTask())
                             }}
                         >
                             Completed
