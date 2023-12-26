@@ -40,7 +40,7 @@ const Sidebar = () => {
     }
 
     return (
-        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#0a111e] shadow-xl'>
+        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#b4b4b5] shadow-xl'>
             <button
                 className='toggle-nav bg-[#0a111e] shadow-xl'
                 onClick={collapsedMenu}

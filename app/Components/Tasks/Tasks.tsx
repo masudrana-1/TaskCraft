@@ -20,7 +20,7 @@ const Tasks = ({title, tasks}: Props) => {
     const { theme,  isLoading, openModal, modal } = useGlobalState();
 
     return (
-        <TaskStyled theme={theme} className='bg-[#0a111e] shadow-xl'>
+        <TaskStyled theme={theme} className='bg-[#dddcdc] shadow-xl'>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1 className='text-center'>{title}</h1>
             <div className="tasks grid">
