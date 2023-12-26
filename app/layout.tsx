@@ -34,10 +34,10 @@ export default function RootLayout({
           /> */}
           <ContextProvider>
             <GlobalStylesProvider>
-              {userId && <Sidebar/>}
               <div className='w-full'>
                 {children}
               </div>
+              {userId && <Sidebar/>}
             </GlobalStylesProvider>
           </ContextProvider>
         </body>
