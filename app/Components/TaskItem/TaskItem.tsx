@@ -22,7 +22,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
     const { theme, deleteTask, updateTask, modal, openModal } = useGlobalState();
 
     return (
-        <TaskItemsStyled theme={theme} className='bg-[#d5d5d5fa] hover:bg-[#213846fa] transition-all shadow shadow-slate-100'>
+        <TaskItemsStyled theme={theme} className='bg-[#d5d5d5fa] hover:bg-[#7899adfa] transition-all shadow shadow-slate-100'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
             <h1>{title}</h1>
             <p>{description}</p>
@@ -31,7 +31,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                 {
                     isCompleted ? (
                         <button
-                            className='completed'
+                            className='completed bg-blue-500'
                             onClick={() => {
                                 const task = {
                                     id,
@@ -45,7 +45,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                         </button>
                     ) : (
                             <button
-                                className='incomplete'
+                                className='incomplete bg-red-500'
                                 onClick={() => {
                                 const task = {
                                     id,
@@ -115,7 +115,7 @@ const TaskItemsStyled = styled.div`
             transform: scale(1.1);
         }
 
-    height: 16rem;
+    height: 24rem;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -147,13 +147,13 @@ const TaskItemsStyled = styled.div`
         .completed, .incomplete{
             display: inline-block;
             padding: 0.4rem 1rem;
-            background: ${(props) => props.theme.colorDanger};
+            /* background: ${(props) => props.theme.colorDanger}; */
             border-radius: 30px
         }
 
         .completed
         {
-            background: ${(props) => props.theme.colorGreenDark};
+            /* background: ${(props) => props.theme.colorGreenDark}; */
         }
     }
 `

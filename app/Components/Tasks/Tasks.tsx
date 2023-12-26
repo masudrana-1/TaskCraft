@@ -23,7 +23,7 @@ const Tasks = ({title, tasks}: Props) => {
         <TaskStyled theme={theme} className='bg-[#dddcdc] shadow-xl'>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1 className='text-center'>{title}</h1>
-            <div className="tasks grid grid-cols-4">
+            <div className="tasks grid grid-cols-5 gap-4">
                 {tasks?.map((task) => (
                     <TaskItem
                         key={task.id}
