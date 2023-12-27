@@ -26,7 +26,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
             <p className='text-2xl font-bold'>{title}</p>
             <hr className='border border-gray-950'/>
-            <p>{description}</p>
+            <p className='description'>{description}</p>
             <p className='date'>{date}</p>
             {/* <hr className='border border-gray-950'/> */}
             <div className="task-footer flex justify-between">
@@ -133,6 +133,12 @@ const TaskItemsStyled = styled.div`
     > h1{
         font-size: 1.5rem;
         font-weight: 600;
+    }
+
+    .description{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: wrap;
     }
 
     .task-footer{
