@@ -20,7 +20,7 @@ const Tasks = ({title, tasks}: Props) => {
     const { theme,  isLoading, openModal, modal } = useGlobalState();
 
     return (
-        <TaskStyled theme={theme} className='bg-[#dddcdc] shadow-xl'>
+        <TaskStyled theme={theme} className=''>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1 className='text-center'>{title}</h1>
             <div className="tasks grid grid-cols-5 gap-4">
@@ -36,7 +36,7 @@ const Tasks = ({title, tasks}: Props) => {
                     />
                 ))}
                 <button
-                    className="create-task className='bg-[#0d1f2cfa] hover:bg-[#213846fa] transition-all'"
+                    className="create-task className='bg-[#4179a1fa] hover:bg-[#527184fa] transition-all'"
                     onClick={openModal}
                 >
                     <FaPlus />
@@ -50,6 +50,7 @@ const Tasks = ({title, tasks}: Props) => {
 
 const TaskStyled = styled.main`
     
+    background-color: rgb(219, 218, 218);
     padding: 2rem;
     width: 100%;
     overflow-y: auto;
@@ -86,7 +87,7 @@ const TaskStyled = styled.main`
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        height: 16rem;
+        height: 24rem;
         font-weight: 600;
         cursor: pointer;
         border-radius: 1rem;

@@ -78,7 +78,7 @@ const Sidebar = () => {
                         )
                     })}
             </ul>
-            <div className="sign-out relative m-5">
+            <div className="sign-out relative m-5 text-black">
                 <Button
                     name={"Sign Out"}
                     type={"submit"}
