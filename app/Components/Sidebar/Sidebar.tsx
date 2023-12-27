@@ -78,7 +78,7 @@ const Sidebar = () => {
                         )
                     })}
             </ul>
-            <div className="sign-out relative m-5">
+            <div className="sign-out relative m-5 flex justify-center items-center rounded-3xl">
                 <Button
                     name={"Sign Out"}
                     type={"submit"}
@@ -309,6 +309,15 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         width: 0.3rem;
     }
 
+    .sign-out{
+        box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+                    inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+
+            &:hover{
+                box-shadow:inset -10px -6px 5px 0px rgba(255, 255, 255, 0.611),
+                inset 10px 6px 5px 0px rgba(63, 63, 63, 0.425);
+            }
+    }
     
 `;
 

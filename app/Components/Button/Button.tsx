@@ -47,10 +47,12 @@ const ButtonStyled = styled.button`
     display: flex;
     align-items: center;
     gap: 5px;
-    color: ${(props) => props.theme.colorGrey2};
+    color: #080808;
     z-index: 5;
     cursor: pointer;
     transition: all 0.55s ease-in-out;
+
+    
 
     i{
         margin-top: 1rem;
@@ -59,14 +61,6 @@ const ButtonStyled = styled.button`
         transition: all 0.55s ease-in-out;
     }
 
-    &:hover{
-        /* color: ${(props) => props.theme.colorGrey0}; */
-        color: ${(props) => props.theme.colorGrey0};
-
-        i{
-        color: ${(props) => props.theme.colorGrey0};
-    }
-    }
 `
 
 export default Button;
