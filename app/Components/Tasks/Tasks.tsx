@@ -91,8 +91,10 @@ const TaskStyled = styled.main`
         font-weight: 600;
         cursor: pointer;
         border-radius: 1rem;
-        border: 3px dotted ${(props) => props.theme.colorGrey5};
-        box-shadow: inset 0 0 60px 4px #000000f8;
+        /* border: 3px dotted ${(props) => props.theme.colorGrey5}; */
+        /* box-shadow: inset 0 0 60px 4px #000000f8; */
+        box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
         transition: all 0.3s ease;
 
         &:hover{
