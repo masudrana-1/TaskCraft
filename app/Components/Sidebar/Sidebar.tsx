@@ -78,7 +78,7 @@ const Sidebar = () => {
                         )
                     })}
             </ul>
-            <div className="sign-out relative m-5 text-black">
+            <div className="sign-out relative m-5">
                 <Button
                     name={"Sign Out"}
                     type={"submit"}
@@ -86,7 +86,7 @@ const Sidebar = () => {
                     borderRad={"0.8rem"}
                     fw={"500"}
                     fs={"1.2rem"}
-                    icon={<FaSignOutAlt />}
+                    icon={<FaSignOutAlt className="text-black"/>}
                     click={() => {
                         signOut(()=> router.push("/signin"))
                     }}
@@ -168,6 +168,9 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
 
         display: flex;
         align-items: center;
+
+        box-shadow:inset -7px -6px 5px 0px rgba(88, 88, 88, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
 
 
         .profile-overlay{

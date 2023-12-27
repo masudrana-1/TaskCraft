@@ -23,7 +23,7 @@ const Tasks = ({title, tasks}: Props) => {
         <TaskStyled theme={theme} className=''>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1 className='text-center capitalize font-serif text-xl'>{title}</h1>
-            <div className="tasks grid grid-cols-5 gap-4">
+            <div className="tasks grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
                 {tasks?.map((task) => (
                     <TaskItem
                         key={task.id}
@@ -36,7 +36,7 @@ const Tasks = ({title, tasks}: Props) => {
                     />
                 ))}
                 <button
-                    className="create-task className='bg-[#4179a1fa] hover:bg-[#527184fa] transition-all'"
+                    className="create-task transition-all h-[15rem] lg:h-[24rem]"
                     onClick={openModal}
                 >
                     <FaPlus />
@@ -87,7 +87,6 @@ const TaskStyled = styled.main`
         align-items: center;
         justify-content: center;
         gap: 0.5rem;
-        height: 24rem;
         font-weight: 600;
         cursor: pointer;
         border-radius: 1rem;
@@ -98,10 +97,13 @@ const TaskStyled = styled.main`
         transition: all 0.3s ease;
 
         &:hover{
-            color: ${(props) => props.theme.colorGrey1};
-            box-shadow: inset 0 0 80px 10px #000000f8;
-            border: none;
+            /* color: ${(props) => props.theme.colorGrey1}; */
+            /* box-shadow: inset 0 0 80px 10px #000000f8; */
+            /* border: none; */
+            /* box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            7px 6px 5px 0px rgba(88, 88, 88, 0.425); */
             transition: all 0.3s ease;
+            transform: scale(1.1);
         }
     }
 `;

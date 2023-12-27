@@ -22,7 +22,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
     const { theme, deleteTask, updateTask, modal, openModal } = useGlobalState();
 
     return (
-        <TaskItemsStyled theme={theme} className='transition-all'>
+        <TaskItemsStyled theme={theme} className='transition-all h-[15rem] lg:h-[24rem]'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
             <h1>{title}</h1>
             <hr className='border border-gray-950'/>
@@ -33,7 +33,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                 {
                     isCompleted ? (
                         <button
-                            className='completed'
+                            className='completed text-[10px] px-2 py-1'
                             onClick={() => {
                                 const task = {
                                     id,
@@ -47,7 +47,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                         </button>
                     ) : (
                             <button
-                                className='incomplete'
+                                className='incomplete text-[10px] px-2 py-1'
                                 onClick={() => {
                                 const task = {
                                     id,
@@ -61,7 +61,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                             </button>
                     )
                 }
-                <div className='flex gap-5'>
+                <div className='flex gap-2 lg:gap-5'>
                     <div className="relative inline-block group">
                         <button
                             className=" text-white py-2 rounded"
@@ -120,7 +120,7 @@ const TaskItemsStyled = styled.div`
             transform: scale(1.1);
         }
 
-    height: 24rem;
+    /* height: 24rem; */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -152,7 +152,7 @@ const TaskItemsStyled = styled.div`
 
         .completed, .incomplete{
             display: inline-block;
-            padding: 0.4rem 1rem;
+            /* padding: 0.4rem 1rem; */
             /* background: ${(props) => props.theme.colorDanger}; */
             border-radius: 30px
         }
