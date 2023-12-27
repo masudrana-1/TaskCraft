@@ -45,8 +45,8 @@ const ModalStyled = styled.div`
         left: 0;
         width: 100%;
         height: 100vh;
-        background-color: rgba(0, 0, 0, 0.715);
-        filter: blur(4px);
+        background-color: #5757575f;
+        filter: blur(10px);
     }
 
     .modal-content{
@@ -57,8 +57,11 @@ const ModalStyled = styled.div`
         z-index: 100;
 
         border-radius: 1rem;
-        background-color: #12222efa;
-        box-shadow: inset 0 0 40px 2px #0d0b0bf8;
+        box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+        background-color: #cbcbcc;
+        /* background-color: #12222efa; */
+        /* box-shadow: inset 0 0 40px 2px #0d0b0bf8; */
         border-radius: ${(props) => props.theme.borderRadiusMd2};
     }
 `;

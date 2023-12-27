@@ -77,8 +77,9 @@ const CreateContent = () => {
     <ContentStyled
       onSubmit={handleSubmit}
       theme={theme}
+      className="font-sans"
     >
-      <h1>Create a Task</h1>
+      <h1 className="text-center font-serif">Create a Task</h1>
       <div className="input-control">
         <label htmlFor="title">Title</label>
         <input
@@ -138,12 +139,12 @@ const CreateContent = () => {
         />
       </div>
 
-      <div className="submit-btn flex justify-end hover:text-white">
+      <div className="flex justify-end text-black">
         <button
           type="submit"
-          className="flex justify-center items-center p-3 gap-2 bg-green-800 rounded-xl hover:bg-green-600 hover:text-white transition-all"
+          className="submit-btn flex justify-center items-center p-3 gap-2 rounded-xl transition-all"
         >
-          <FaPlus className="hover:text-white" />
+          <FaPlus className="" />
           Create Task
         </button>
       </div>
@@ -155,9 +156,11 @@ const ContentStyled = styled.form`
   > h1 {
     font-size: clamp(1.2rem, 5vw, 1.6rem);
     font-weight: 600;
+
   }
 
-  color: ${(props) => props.theme.colorGrey1};
+  /* color: ${(props) => props.theme.colorGrey1}; */
+  color: #1d1c1c;
 
   .input-control {
     position: relative;
@@ -181,10 +184,16 @@ const ContentStyled = styled.form`
       padding: 1rem;
       resize: none;
 
-      background-color: #122131f8;
-      box-shadow: inset 0 0 40px 2px #000000f8;
-      color: ${(props) => props.theme.colorGrey2};
+      /* background-color: #122131f8; */
+      /* box-shadow: inset 0 0 40px 2px #000000f8; */
+
+      box-shadow:inset -10px -8px 7px 0px rgba(255, 255, 255, 0.425),
+            inset 10px 8px 7px 0px rgba(88, 88, 88, 0.425);
+
+      color: #122131f8;
+      /* color: ${(props) => props.theme.colorGrey2}; */
     }
+
   }
 
   .toggler {
@@ -196,6 +205,20 @@ const ContentStyled = styled.form`
       width: initial;
     }
   }
+
+  .submit-btn{
+      box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+
+
+            &:hover{
+      box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+           inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+    
+            }
+    }
+
+
 `;
 
 export default CreateContent;
