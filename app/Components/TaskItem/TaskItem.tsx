@@ -31,7 +31,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                 {
                     isCompleted ? (
                         <button
-                            className='completed bg-blue-500'
+                            className='completed'
                             onClick={() => {
                                 const task = {
                                     id,
@@ -45,7 +45,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                         </button>
                     ) : (
                             <button
-                                className='incomplete bg-red-500'
+                                className='incomplete'
                                 onClick={() => {
                                 const task = {
                                     id,
@@ -86,14 +86,14 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                             Edit
                         </div>
                     </button> */}
-                    <div className='relative inline-block group '>
+                    <div className='relative inline-block group'>
                         <button 
-                        className="delete text-white py-2 rounded"
+                        className="text-white py-2 rounded"
                         onClick={() => {
                             deleteTask(id)
                         }}
                     >
-                        <FaTrash className="hover:text-red-600"/>
+                        <FaTrash className="hover:text-red-600 deleteicon"/>
                         </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Delete
@@ -110,7 +110,7 @@ const TaskItemsStyled = styled.div`
     padding: 1.2rem 1rem;
     border-radius: 1rem;
     /* box-shadow: inset 0 0 60px 4px #000000f8; */
-    box-shadow: -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+    box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
     7px 6px 5px 0px rgba(88, 88, 88, 0.425);
     
     &:hover{
@@ -154,9 +154,21 @@ const TaskItemsStyled = styled.div`
             border-radius: 30px
         }
 
+        .incomplete{
+            box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+        }
+
         .completed
         {
             /* background: ${(props) => props.theme.colorGreenDark}; */
+            box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+        }
+
+        .deleteicon{
+            box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
         }
     }
 `
