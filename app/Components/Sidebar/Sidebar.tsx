@@ -42,7 +42,7 @@ const Sidebar = () => {
     return (
         <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#b4b4b5] shadow-xl'>
             <button
-                className='toggle-nav bg-[#0a111e] shadow-xl'
+                className='toggle-nav bg-[#b4b4b5] shadow-xl'
                 onClick={collapsedMenu}
             >
                 {collapsed? <FaBars /> : <FaArrowLeft/>}
@@ -133,7 +133,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         padding: 10px 0.9rem;
         position: absolute;
         right: -43px;
-        top: 5rem;
+        top: 3rem;
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }

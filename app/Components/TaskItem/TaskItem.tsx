@@ -24,7 +24,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
     return (
         <TaskItemsStyled theme={theme} className='transition-all h-[15rem] lg:h-[24rem]'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
-            <h1>{title}</h1>
+            <p className='text-2xl font-bold'>{title}</p>
             <hr className='border border-gray-950'/>
             <p>{description}</p>
             {/* <hr className='border border-gray-950'/> */}
@@ -33,7 +33,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                 {
                     isCompleted ? (
                         <button
-                            className='completed text-[10px] px-2 py-1'
+                            className='completed text-[10px] px-2 py-1 lg:text-[17px] lg:px-3 lg:py-2'
                             onClick={() => {
                                 const task = {
                                     id,
@@ -47,7 +47,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                         </button>
                     ) : (
                             <button
-                                className='incomplete text-[10px] px-2 py-1'
+                                className='incomplete text-[10px] px-2 py-1 lg:text-[17px] lg:px-3 lg:py-2'
                                 onClick={() => {
                                 const task = {
                                     id,
