@@ -25,7 +25,9 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
         <TaskItemsStyled theme={theme} className='transition-all'>
             {/* {modal && <Modal content={ <UpdateContent/>} />} */}
             <h1>{title}</h1>
+            <hr className='border border-gray-950'/>
             <p>{description}</p>
+            {/* <hr className='border border-gray-950'/> */}
             <p className='date'>{date}</p>
             <div className="task-footer flex justify-between">
                 {
@@ -72,7 +74,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                                 updateTask(task)
                             }}
                         >
-                            {isImportant ? <FaStar className="text-red-700"/> : <FaStar />}
+                            {isImportant ? <FaStar className="text-red-700"/> : <FaStar className="text-slate-700"/>}
                         </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Important
@@ -93,7 +95,7 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
                             deleteTask(id)
                         }}
                     >
-                        <FaTrash className="hover:text-red-600 deleteicon"/>
+                        <FaTrash className="hover:text-red-600 text-slate-700"/>
                         </button>
                         <div className="hidden group-hover:block bg-gray-800 text-white text-center text-xs py-2 px-4 rounded absolute bottom-full left-1/2 transform -translate-x-1/2">
                             Delete
@@ -124,6 +126,7 @@ const TaskItemsStyled = styled.div`
     gap: 0.5rem;
 
     .date{
+        border-top: 2px solid black;
         margin-top: auto;
     }
 
@@ -166,10 +169,15 @@ const TaskItemsStyled = styled.div`
             inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
         }
 
-        .deleteicon{
+        /* .star{
             box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
             inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
-        }
+        } */
+
+        /* .deleteicon{
+            box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
+        } */
     }
 `
 
