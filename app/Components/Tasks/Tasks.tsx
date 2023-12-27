@@ -20,7 +20,7 @@ const Tasks = ({title, tasks}: Props) => {
     const { theme,  isLoading, openModal, modal } = useGlobalState();
 
     return (
-        <TaskStyled theme={theme} className=''>
+        <TaskStyled theme={theme} className='font-sans'>
             {modal && <Modal content={ <CreateContent/>} />}
             <h1 className='text-center capitalize font-serif text-xl underline underline-offset-8'>{title}</h1>
             <div className="tasks grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-7">

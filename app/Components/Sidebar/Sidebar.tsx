@@ -40,9 +40,9 @@ const Sidebar = () => {
     }
 
     return (
-        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#cbcbcc] shadow-xl'>
+        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#cbcbcc] font-sans'>
             <button
-                className='toggle-nav bg-[#b4b4b5] shadow-xl'
+                className='toggle-nav bg-[#b4b4b5]'
                 onClick={collapsedMenu}
             >
                 {collapsed? <FaBars /> : <FaArrowLeft/>}

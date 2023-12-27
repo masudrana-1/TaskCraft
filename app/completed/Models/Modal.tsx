@@ -14,7 +14,7 @@ const Modal = ({content}: Props ) => {
     const {closeModal, theme} = useGlobalState()
 
     return (
-        <ModalStyled theme={theme}>
+        <ModalStyled theme={theme} className='font-sans'>
             <div
                 className="modal-overlay"
                 onClick={closeModal}
