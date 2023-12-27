@@ -27,8 +27,8 @@ const TaskItem = ({ title, description, date, isCompleted, isImportant ,id  }: P
             <p className='text-2xl font-bold'>{title}</p>
             <hr className='border border-gray-950'/>
             <p>{description}</p>
-            {/* <hr className='border border-gray-950'/> */}
             <p className='date'>{date}</p>
+            {/* <hr className='border border-gray-950'/> */}
             <div className="task-footer flex justify-between">
                 {
                     isCompleted ? (

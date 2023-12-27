@@ -40,7 +40,7 @@ const Sidebar = () => {
     }
 
     return (
-        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#b4b4b5] shadow-xl'>
+        <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#cbcbcc] shadow-xl'>
             <button
                 className='toggle-nav bg-[#b4b4b5] shadow-xl'
                 onClick={collapsedMenu}
@@ -101,7 +101,7 @@ const Sidebar = () => {
 const SidebarStyled = styled.nav<{collapsed: boolean}>`
     position: relative;
     width: ${(props) => props.theme.sidebarWidth};
-    border-right: 2px solid ${(props) => props.theme.borderColor2};
+    /* border-right: 2px solid ${(props) => props.theme.borderColor2}; */
 
     display: flex;
     flex-direction: column;
@@ -169,7 +169,7 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
         display: flex;
         align-items: center;
 
-        box-shadow:inset -7px -6px 5px 0px rgba(88, 88, 88, 0.425),
+        box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
             inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
 
 
@@ -237,12 +237,16 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
     .nav-item{
         position: relative;
         padding: 0.8rem 1rem 0.9rem 2.1rem;
-        margin: 0.3rem 0;
+        margin: 1rem 0;
+        /* margin-left: 1rem; */
 
         display: grid;
+        border-radius: 10px;
         grid-template-columns: 40px 1fr;
         cursor: pointer;
         align-items: center;
+        box-shadow:-7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            7px 6px 5px 0px rgba(88, 88, 88, 0.425);
 
         &::after{
             position: absolute;
@@ -251,7 +255,10 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
             top: 0;
             width: 0;
             height: 100%;
-            background-color: ${(props) => props.theme.activeNavLinkHover};
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.425);
+            box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
             z-index: 1;
             transition: all 0.3s ease-in-out;
         }
@@ -289,10 +296,12 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
     }
 
     .active{
-        background-color: ${(props) => props.theme.activeNavLink};
+        /* background-color: ${(props) => props.theme.activeNavLink}; */
+        box-shadow:inset -7px -6px 5px 0px rgba(255, 255, 255, 0.425),
+            inset 7px 6px 5px 0px rgba(88, 88, 88, 0.425);
 
         i, a{
-            color: ${(props) => props.theme.colorIcons2};
+            /* color: ${(props) => props.theme.colorIcons2}; */
         }
     }
 
