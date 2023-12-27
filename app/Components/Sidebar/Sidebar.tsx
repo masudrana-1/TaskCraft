@@ -42,10 +42,10 @@ const Sidebar = () => {
     return (
         <SidebarStyled theme={theme} collapsed={collapsed} className='bg-[#cbcbcc] font-sans'>
             <button
-                className='toggle-nav bg-[#b4b4b5]'
+                className='toggle-nav bg-[#cbcbcc]'
                 onClick={collapsedMenu}
             >
-                {collapsed? <FaBars /> : <FaArrowLeft/>}
+                {collapsed? <FaBars className="text-lg"/> : <FaArrowLeft/>}
             </button>
             <div className="profile">
                 <div className="profile-overlay">
@@ -130,10 +130,10 @@ const SidebarStyled = styled.nav<{collapsed: boolean}>`
 
     .toggle-nav{
         display: none;
-        padding: 10px 0.9rem;
+        padding: 19px 1.5rem;
         position: absolute;
-        right: -43px;
-        top: 3rem;
+        right: -61px;
+        top: 2rem;
         border-top-right-radius: 1rem;
         border-bottom-right-radius: 1rem;
     }

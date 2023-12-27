@@ -60,6 +60,7 @@ const ButtonStyled = styled.button`
     }
 
     &:hover{
+        /* color: ${(props) => props.theme.colorGrey0}; */
         color: ${(props) => props.theme.colorGrey0};
 
         i{
