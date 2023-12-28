@@ -1,7 +1,9 @@
 "use client"
 
+// import Head from 'next/head';
 import Tasks from "./Components/Tasks/Tasks";
 import { useGlobalState } from "./context/globalContextProvider";
+
 
 export default function Home() {
 
@@ -9,6 +11,5 @@ export default function Home() {
 
   return (
       <Tasks tasks={tasks} title={"All Tasks"}/>
-    
   )
 }
